@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>EsiLink</title>
+    <title>EsiRoot</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -23,8 +23,8 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    EsiLink
+                <a class="navbar-brand" href="{{ url('/admin') }}">
+                    EsiRoot
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -36,16 +36,13 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/">Accueil <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/admin">Accueil <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="http://esi.dz/">ESI</a>
+        <a class="nav-link" href="">Ajouter un étudiant</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/about-us">A propos</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/admin">Administrateur?</a>
+        <a class="nav-link" href="">Afficher les étudiants</a>
       </li>
       
     </ul>

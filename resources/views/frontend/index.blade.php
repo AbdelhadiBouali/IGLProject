@@ -1,11 +1,12 @@
-@extends('layouts.frontend')
+@extends('layouts.app')
 
 @section('title')
-    Home
+    Bienvenue
 @endsection
 
 
-@section('content')hello
+@section('content')
+    @include('frontend.slider') 
 @endsection
 
 

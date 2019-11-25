@@ -98,7 +98,7 @@
 					<td>{{ $row->stud_name }}</td>
 					<td>{{ $row->stud_email }}</td>
 					<td>{{ $row->stud_phone }}</td>
-					<td><a href="/click_edit/{{ $row->stud_email }}" class="btn btn-success">Editer</a></td>
+					<td><a href="/click_edit/{{ $row->id }}" class="btn btn-success">Editer</a></td>
 					<td><a href="/click_delete/{{ $row->stud_email }}" class="btn btn-danger">Supprimer</a></td>				
 				</tr>
 				@endforeach

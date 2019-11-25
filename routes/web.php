@@ -24,7 +24,12 @@ Route::get('/admin/AjoutEtudiant','StudentController@displayform');
 Route::post('/add_data','StudentController@save');
 Route::get('/admin/viewstudent','StudentController@viewform');
 Route::get('/admin/viewstudent','StudentController@index'); 
-Route::get('/click_edit','StudentController@edit_function');
+
+
+Route::get('/click_edit/{id}','StudentController@edit_function');
+Route::post('/update/{id}','StudentController@update_function');
+
+
 Route::get('/click_delete/{stud_email}','StudentController@delete_function');
 
 

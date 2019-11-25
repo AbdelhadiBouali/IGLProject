@@ -39,10 +39,25 @@ class StudentController extends Controller
         return view('viewstudent',['students'=>$student]);
     }
 
-    public function edit_function($stud_email){
-      $student =  DB::select('select * from students where stud_email=?',[$stud_email]);
-        return view('studentedit',['student'=>$student]);
+    public function edit_function($id){
+      $student =  DB::select('select * from students where id=?',[$id]);
+        return view('editstudent',['student'=>$student]);
         }
+
+      public function update_function(Request $request,$id){
+        
+        $student_name= $request->input('stud_name');
+        $student_phone= $request->input('stud_phone');
+        $student_email= $request->input('stud_email');
+        
+        DB::update('update students set stud_name=?, stud_phone=?,stud_email=? where id=?',
+        [$student_name,$student_phone,$student_email,$id]);
+        
+
+        return redirect('/admin/viewstudent')->with('success','Mise à jour faite!');
+       }
+    
+    
 
     public function delete_function ($stud_email){
 
@@ -51,4 +66,6 @@ class StudentController extends Controller
         return redirect('/admin/viewstudent')->with('success','Etudiant Supprimé');
 
     }
+
+   
 }

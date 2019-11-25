@@ -2,6 +2,11 @@
 
 @section('content')
 <div class="container">
+@if(\Session::has('success'))
+                <div class="alert">
+                <h4> {{ \Session::get('success') }}</h4>
+                </div>
+                     @endif
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

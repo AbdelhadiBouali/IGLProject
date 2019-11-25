@@ -45,7 +45,7 @@
         <a class="nav-link" href="/about-us">A propos</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/admin">Administrateur?</a>
+        <a class="nav-link" href="/admin/login">Administrateur?</a>
       </li>
       
     </ul>

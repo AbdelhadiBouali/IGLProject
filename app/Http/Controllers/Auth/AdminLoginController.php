@@ -20,6 +20,7 @@ class AdminLoginController extends Controller
 
     public function login(Request $request)
     {
+        // dd($request);
         $this->validate($request,[
             'email' =>'required|email',
             'password'=>'required|min:8'
@@ -29,9 +30,7 @@ class AdminLoginController extends Controller
             return redirect()->intended(route('admin.dashboard'));
         };
 
-
         return redirect()->back()->withInput($request->only('email','remember'));
-
 
     }
 }

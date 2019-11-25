@@ -1,13 +1,14 @@
+
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html>
 <head>
-    <meta charset="utf-8">
+<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>EsiRoot</title>
+    <title>EsiLink</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -18,9 +19,13 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://stackpath.bootsrapcdn.com/bootsrap/4.1.3/css/bootsrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwE0ngsV7Zt27NXFoaoApmYm81iuXoPkF0JwJ8ERdknLPM0" crossorigin="anonymous">
+    <title>Afficher les étudiants</title>
 </head>
 <body>
-    <div id="app">
+<div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/admin') }}">
@@ -50,35 +55,6 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Se connecter') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('S"inscrire') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Se déconnecter') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
                     </ul>
                 </div>
             </div>
@@ -88,5 +64,48 @@
             @yield('content')
         </main>
     </div>
+                      @if(\Session::has('success'))
+                    <div class="alert alert-danger">
+                    <h4> {{ \Session::get('success') }}</h4>
+                    </div>
+                        @endif
+<div class="container">
+
+<div class="jumbotron">
+<div class="line" style="text-align:right;">
+    <a href="/admin/AjoutEtudiant" class="btn btn-primary"> Ajouter un étudiant </a>
+    </div>
+	<h1>Informations des étudiants</h1>
+	<hr>
+		<div class="line" style="text-align:middle;">
+	</div><br>
+<form>
+	<table class="table table-bordered">
+		<thead class="thead-dark">
+			<tr>
+				<th> ID Etudiant </th>
+				<th> Nom </th>
+				<th> Adresse email </th>
+				<th> Numéro de téléphone</th>
+				<th> EDITER </th>
+				<th> SUPPRIMER </th>
+			</tr>		
+			<tbody>
+			</thread>
+				@foreach ($students as $row)
+				<tr style ="background: white;">
+					<td>{{ $row->id }}</td>
+					<td>{{ $row->stud_name }}</td>
+					<td>{{ $row->stud_email }}</td>
+					<td>{{ $row->stud_phone }}</td>
+					<td><a href="/click_edit/{{ $row->stud_email }}" class="btn btn-success">Editer</a></td>
+					<td><a href="/click_delete/{{ $row->stud_email }}" class="btn btn-danger">Supprimer</a></td>				
+				</tr>
+				@endforeach
+			</tbody>
+		</table>
+	</form>
+</div>
+</div>
 </body>
 </html>

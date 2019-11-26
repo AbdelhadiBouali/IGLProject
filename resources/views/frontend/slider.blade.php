@@ -7,24 +7,25 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="{{asset('frontend/slider/esi2.jpg')}}" class="d-block w-100" alt="...">
+        <img src="{{asset('frontend/slider/esi3.jpg')}}" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
+        <br>
           <h5 style="color:#000000">Ecole supérieure d'informatique - Alger</h5>
           <p style="color:#000000";><b>L'une des meilleures école d'informatique en Algérie</b></p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="{{asset('frontend/slider/esi4.jpg')}}" class="d-block w-100" alt="...">
+        <img src="{{asset('frontend/slider/DSC_0241.jpg')}}" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h5>Ecole supérieure d'informatique - Alger</h5>
+          <p>Echange de connaissance, et partage d'expériences.</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="{{asset('frontend/slider/esi4.jpg')}}" class="d-block w-100" alt="...">
+        <img src="{{asset('frontend/slider/IMG_0197.jpg')}}" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
-          <h5>Third slide label</h5>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          <h5>PROMO 2017/2018</h5>
+          <p>On est là pour être l'élite!</p>
         </div>
       </div>
     </div>
